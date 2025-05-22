@@ -1,0 +1,17 @@
+info:
+  name: "Crisp Widget"
+  identifier: "crispwidget"
+  description: "Add a crisp widget to your panel"
+  flags: ""
+  version: "1.0"
+  target: "beta-2024-12"
+  author: "26bz"
+  icon: "assets/crisp.png"
+  website: "https://26bz.online/"
+admin:
+  view: "view.blade.php"
+  controller: "controller.php"
+dashboard:
+  wrapper: "wrapper.blade.php"
+data:
+  public: "assets"
