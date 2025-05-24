@@ -3,7 +3,7 @@ info:
   identifier: "chatwidgets"
   description: "Live chat widget integration supporting Crisp, LiveChat, Chatwoot, Tawk.to, Tidio, Zendesk, and Zoho SalesIQ made by @26BZ"
   flags: ""
-  version: "1.0"
+  version: "1.3"
   target: "beta-2024-12"
   author: "26bz"
   icon: "assets/chatwidget.png"
@@ -11,6 +11,7 @@ info:
 admin:
   view: "view.blade.php"
   controller: "controller.php"
+  wrapper: "admin_wrapper.blade.php"
 dashboard:
   wrapper: "wrapper.blade.php"
 data:

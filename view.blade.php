@@ -60,6 +60,14 @@
         <small class="form-text text-muted">Your Chatwoot installation URL (e.g., https://app.chatwoot.com)</small>
       </div>
 
+      <div class="form-group">
+        <div class="checkbox checkbox-primary no-margin-bottom">
+          <input type="checkbox" name="showOnAdmin" id="showOnAdmin" value="1" {{ $showOnAdmin ? 'checked' : '' }} />
+          <label for="showOnAdmin">Show chat widget on admin dashboard pages</label>
+        </div>
+        <p class="text-muted small">When enabled, the chat widget will appear on both user and admin pages. When disabled, it will only appear on user-facing pages.</p>
+      </div>
+
       {{ csrf_field() }}
       <div class="form-group">
         <button type="submit" name="_method" value="PATCH" class="btn btn-primary">
@@ -108,7 +116,8 @@
     @if($provider == 'chatwoot' && $baseUrl)
     <p><strong>Base URL:</strong> <code>{{ $baseUrl }}</code></p>
     @endif
-    <p class="text-muted">The chat widget will appear on all admin and user dashboard pages.</p>
+    <p><strong>Admin Dashboard Visibility:</strong> {{ $showOnAdmin ? 'Enabled' : 'Disabled' }}</p>
+    <p class="text-muted">The chat widget will appear on {{ $showOnAdmin ? 'both admin and user' : 'only user' }} dashboard pages.</p>
   </div>
 </div>
 @endif

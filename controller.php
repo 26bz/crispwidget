@@ -19,12 +19,15 @@ class {identifier}ExtensionController extends Controller
         $provider = $this->blueprint->dbGet('{identifier}', 'provider') ?: 'disabled';
         $widgetId = $this->blueprint->dbGet('{identifier}', 'widgetId') ?: '';
         $baseUrl = $this->blueprint->dbGet('{identifier}', 'baseUrl') ?: 'https://app.chatwoot.com';
+        $showOnAdmin = $this->blueprint->dbGet('{identifier}', 'showOnAdmin');
+        $showOnAdmin = ($showOnAdmin === null) ? true : (bool)$showOnAdmin;
 
         return $this->view->make(
             'admin.extensions.{identifier}.index', [
                 'provider' => $provider,
                 'widgetId' => $widgetId,
                 'baseUrl' => $baseUrl,
+                'showOnAdmin' => $showOnAdmin,
                 'root' => "/admin/extensions/{identifier}",
                 'blueprint' => $this->blueprint,
             ]
