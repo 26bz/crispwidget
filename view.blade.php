@@ -108,7 +108,7 @@
     @if($provider == 'chatwoot' && $baseUrl)
     <p><strong>Base URL:</strong> <code>{{ $baseUrl }}</code></p>
     @endif
-    <p class="text-muted">The chat widget will appear on all admin and user dashboard pages.</p>
+    <p class="text-muted">The chat widget will appear on all user dashboard pages.</p>
   </div>
 </div>
 @endif
